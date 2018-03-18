@@ -1,0 +1,30 @@
+{
+  "name": "serviceberry-form",
+  "version": "1.0.0",
+  "description": "URL encoded form serialization plugin for serviceberry",
+  "main": "plugin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bob-gray/serviceberry-form.git"
+  },
+  "keywords": [
+    "urlencoded",
+    "serialization",
+    "serviceberry",
+    "api",
+    "rest",
+    "http"
+  ],
+  "author": "Bob Gray <gray.bob98@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bob-gray/serviceberry-form/issues"
+  },
+  "homepage": "https://github.com/bob-gray/serviceberry-form#readme",
+  "peerDependencies": {
+    "serviceberry": ">=0.2.0"
+  }
+}
