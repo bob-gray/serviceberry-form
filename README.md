@@ -1,7 +1,7 @@
 serviceberry-form
 =================
 
-URL encoded form serialization plugin for serviceberry.
+URL encoded form serialization plugin for Serviceberry.
 
 API
 ---
