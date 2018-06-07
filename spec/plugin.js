@@ -5,7 +5,7 @@ const form = require("../plugin"),
 	{HttpError} = require("serviceberry"),
 	httpMocks = require("node-mocks-http");
 
-describe("serviceberry-json", () => {
+describe("serviceberry-form", () => {
 	var body,
 		request,
 		response;
