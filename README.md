@@ -1,6 +1,11 @@
 serviceberry-form
 =================
 
+[![CircleCI](https://circleci.com/gh/bob-gray/serviceberry-form.svg?style=svg)](https://circleci.com/gh/bob-gray/serviceberry-form)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/5697c352f89c0bbe79f3/test_coverage)](https://codeclimate.com/github/bob-gray/serviceberry-form/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/5697c352f89c0bbe79f3/maintainability)](https://codeclimate.com/github/bob-gray/serviceberry-form/maintainability)
+[![npm version](https://badge.fury.io/js/serviceberry-json.svg)](https://badge.fury.io/js/serviceberry-json)
+
 URL encoded form serialization plugin for [Serviceberry](https://serviceberry.js.org).
 
 API
