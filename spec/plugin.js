@@ -2,7 +2,6 @@
 
 const form = require("../plugin"),
 	Request = require("serviceberry/src/Request"),
-	{HttpError} = require("serviceberry"),
 	httpMocks = require("node-mocks-http");
 
 describe("serviceberry-form", () => {
@@ -58,18 +57,31 @@ describe("serviceberry-form", () => {
 });
 
 function createRequest (body) {
-	var incomingMessage = httpMocks.createRequest({
-			url: "/"
-		}),
-		request;
+	const request = new Request(httpMocks.createRequest({
+			url: "/",
+			setEncoding: Function.prototype,
+			connection: {
+				encrypted: false
+			}
+		})),
+		getContent = jasmine.createSpy("request.getContent").and.returnValue(body),
+		proceed = jasmine.createSpy("request.proceed");
 
-	incomingMessage.setEncoding = Function.prototype;
-	request = new Request(incomingMessage);
-	request.getContent = jasmine.createSpy("request.getContent")
-		.and.returnValue(body);
-	request.proceed = jasmine.createSpy("request.proceed");
+	return new Proxy(request, {
+		get (target, name, receiver) {
+			var value;
 
-	return request;
+			if (name === "getContent") {
+				value = getContent;
+			} else if (name === "proceed") {
+				value = proceed;
+			} else {
+				value = Reflect.get(target, name, receiver);
+			}
+
+			return value;
+		}
+	});
 }
 
 function createResponse (body) {
